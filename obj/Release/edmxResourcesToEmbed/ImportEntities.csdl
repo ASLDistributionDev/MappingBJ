@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ImportModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="mmdestination">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Key" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="DName" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="DAdd1" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="DAdd2" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="DCity" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="DProv" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="DCty" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="DPostal" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="DContact" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Pcs" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Pwgt" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Twgt" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Tskid" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="UOM" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Dim" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Cube" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Ref1" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Ref2" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Ref3" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="OName" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="OAdd1" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="OAdd2" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="OCity" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="OProv" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="OCty" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="OPostal" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="PuDate__yy_mm_dd_" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="DelDate__yy_mm_dd_" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Hand_Notes" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Special_Instructions" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="mmraw">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TRACKING_NUMBER__REF" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="SHIP_DATE" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="ACCOUNT_NUMBER" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="CODE" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="SHIPPER_NAME" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="SHIPPER_ADDRESS" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="SPACER1" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="SHIPPER_CITY" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="SHIPPER_PROVINCE" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="SHIPPER_POSTAL" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="CONSIGNEE_NAME" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="KEY_CONSIGNEE_NUMBER" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="CONSIGNEE" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="CONSIGNEE_LOCATION" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="CONSIGNEE_ADDRESS_1" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="CONSIGNEE_ADDRESS_2" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="CONSIGNEE_CITY" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="CONSIGNEE_PROVINCE" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="CONSIGNEE_POSTAL" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="SPACER2" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="SPACER3" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="SKID_COUNT" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="WEIGHT" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="SERVICE" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="TRACKING_NUMBER" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="DEL_INSTRUCTIONS" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="ACC_" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="ACC_2" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="ACC_3" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="ImportEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="mmdestinations" EntityType="Self.mmdestination" />
+    <EntitySet Name="mmraws" EntityType="Self.mmraw" />
+    <EntitySet Name="mmrefs" EntityType="ImportModel.mmref" />
+  </EntityContainer>
+  <EntityType Name="mmref">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Store" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Vendor" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Store_Name" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Address_1" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Address_2" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Prov" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="PC" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="All_year_Daily_Deliveries" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Start_Window" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="End_Window" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Length_of_Window" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Tailgate_Dock" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Attention" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Phone_" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Q4_Skid_Max" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Q4_Est_Cartons_Peak" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Q4_Weekly_Max_Carton" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Rest_of_Year_Skid_Max" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Rest_of_Year_Est__Cartons_Off_Peak" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Off_Peak_Max_Carton" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Carrier" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Transit_Days" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Ship_Monday" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Ship_Tuesday" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Ship_Wednesday" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Ship_Thursday" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Ship_Friday" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Skid_Reduction" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Online_or_Offline" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+    <Property Name="Notes" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

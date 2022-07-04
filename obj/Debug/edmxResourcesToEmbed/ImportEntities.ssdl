@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ImportModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Timestamp" Type="datetime" />
+    <Property Name="Application" Type="varchar" MaxLength="64" />
+    <Property Name="Context" Type="varchar" MaxLength="64" />
+    <Property Name="StackTrace" Type="varchar" MaxLength="512" />
+    <Property Name="Ref1" Type="varchar" MaxLength="128" />
+    <Property Name="Ref2" Type="varchar" MaxLength="128" />
+    <Property Name="Ref3" Type="varchar" MaxLength="128" />
+    <Property Name="ExceptionMessage" Type="varchar" MaxLength="2048" />
+    <Property Name="Entry" Type="varchar" MaxLength="2048" />
+  </EntityType>
+  <EntityType Name="mmdestination">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Key" Type="varchar" MaxLength="2048" />
+    <Property Name="DName" Type="varchar" MaxLength="2048" />
+    <Property Name="DAdd1" Type="varchar" MaxLength="2048" />
+    <Property Name="DAdd2" Type="varchar" MaxLength="2048" />
+    <Property Name="DCity" Type="varchar" MaxLength="2048" />
+    <Property Name="DProv" Type="varchar" MaxLength="2048" />
+    <Property Name="DCty" Type="varchar" MaxLength="2048" />
+    <Property Name="DPostal" Type="varchar" MaxLength="2048" />
+    <Property Name="DContact" Type="varchar" MaxLength="2048" />
+    <Property Name="Pcs" Type="varchar" MaxLength="2048" />
+    <Property Name="Pwgt" Type="varchar" MaxLength="2048" />
+    <Property Name="Twgt" Type="varchar" MaxLength="2048" />
+    <Property Name="Tskid" Type="varchar" MaxLength="2048" />
+    <Property Name="UOM" Type="varchar" MaxLength="2048" />
+    <Property Name="Dim" Type="varchar" MaxLength="2048" />
+    <Property Name="Cube" Type="varchar" MaxLength="2048" />
+    <Property Name="Ref1" Type="varchar" MaxLength="2048" />
+    <Property Name="Ref2" Type="varchar" MaxLength="2048" />
+    <Property Name="Ref3" Type="varchar" MaxLength="2048" />
+    <Property Name="OName" Type="varchar" MaxLength="2048" />
+    <Property Name="OAdd1" Type="varchar" MaxLength="2048" />
+    <Property Name="OAdd2" Type="varchar" MaxLength="2048" />
+    <Property Name="OCity" Type="varchar" MaxLength="2048" />
+    <Property Name="OProv" Type="varchar" MaxLength="2048" />
+    <Property Name="OCty" Type="varchar" MaxLength="2048" />
+    <Property Name="OPostal" Type="varchar" MaxLength="2048" />
+    <Property Name="PuDate (yy/mm/dd)" Type="varchar" MaxLength="2048" />
+    <Property Name="DelDate (yy/mm/dd)" Type="varchar" MaxLength="2048" />
+    <Property Name="Hand_Notes" Type="varchar" MaxLength="2048" />
+    <Property Name="Special Instructions" Type="varchar" MaxLength="2048" />
+  </EntityType>
+  <EntityType Name="mmraw">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TRACKING NUMBER/ REF" Type="varchar" MaxLength="2048" />
+    <Property Name="SHIP/DATE" Type="varchar" MaxLength="2048" />
+    <Property Name="ACCOUNT NUMBER" Type="varchar" MaxLength="2048" />
+    <Property Name="CODE" Type="varchar" MaxLength="2048" />
+    <Property Name="SHIPPER NAME" Type="varchar" MaxLength="2048" />
+    <Property Name="SHIPPER ADDRESS" Type="varchar" MaxLength="2048" />
+    <Property Name="SPACER1" Type="varchar" MaxLength="2048" />
+    <Property Name="SHIPPER CITY" Type="varchar" MaxLength="2048" />
+    <Property Name="SHIPPER PROVINCE" Type="varchar" MaxLength="2048" />
+    <Property Name="SHIPPER POSTAL" Type="varchar" MaxLength="2048" />
+    <Property Name="CONSIGNEE NAME" Type="varchar" MaxLength="2048" />
+    <Property Name="KEY/CONSIGNEE NUMBER" Type="varchar" MaxLength="2048" />
+    <Property Name="CONSIGNEE" Type="varchar" MaxLength="2048" />
+    <Property Name="CONSIGNEE LOCATION" Type="varchar" MaxLength="2048" />
+    <Property Name="CONSIGNEE ADDRESS 1" Type="varchar" MaxLength="2048" />
+    <Property Name="CONSIGNEE ADDRESS 2" Type="varchar" MaxLength="2048" />
+    <Property Name="CONSIGNEE CITY" Type="varchar" MaxLength="2048" />
+    <Property Name="CONSIGNEE PROVINCE" Type="varchar" MaxLength="2048" />
+    <Property Name="CONSIGNEE POSTAL" Type="varchar" MaxLength="2048" />
+    <Property Name="SPACER2" Type="varchar" MaxLength="2048" />
+    <Property Name="SPACER3" Type="varchar" MaxLength="2048" />
+    <Property Name="SKID COUNT" Type="varchar" MaxLength="2048" />
+    <Property Name="WEIGHT" Type="varchar" MaxLength="2048" />
+    <Property Name="SERVICE" Type="varchar" MaxLength="2048" />
+    <Property Name="TRACKING NUMBER" Type="varchar" MaxLength="2048" />
+    <Property Name="DEL INSTRUCTIONS" Type="varchar" MaxLength="2048" />
+    <Property Name="ACC#" Type="varchar" MaxLength="2048" />
+    <Property Name="ACC#2" Type="varchar" MaxLength="2048" />
+    <Property Name="ACC#3" Type="varchar" MaxLength="2048" />
+  </EntityType>
+  <EntityType Name="mmref">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Store" Type="varchar" MaxLength="2048" />
+    <Property Name="Vendor" Type="varchar" MaxLength="2048" />
+    <Property Name="Store Name" Type="varchar" MaxLength="2048" />
+    <Property Name="Name" Type="varchar" MaxLength="2048" />
+    <Property Name="Address 1" Type="varchar" MaxLength="2048" />
+    <Property Name="Address 2" Type="varchar" MaxLength="2048" />
+    <Property Name="City" Type="varchar" MaxLength="2048" />
+    <Property Name="Prov" Type="varchar" MaxLength="2048" />
+    <Property Name="PC" Type="varchar" MaxLength="2048" />
+    <Property Name="All year Daily Deliveries" Type="varchar" MaxLength="2048" />
+    <Property Name="Start Window" Type="varchar" MaxLength="2048" />
+    <Property Name="End Window" Type="varchar" MaxLength="2048" />
+    <Property Name="Length of Window" Type="varchar" MaxLength="2048" />
+    <Property Name="Tailgate/Dock" Type="varchar" MaxLength="2048" />
+    <Property Name="Email" Type="varchar" MaxLength="2048" />
+    <Property Name="Attention" Type="varchar" MaxLength="2048" />
+    <Property Name="Phone#" Type="varchar" MaxLength="2048" />
+    <Property Name="Q4 Skid Max" Type="varchar" MaxLength="2048" />
+    <Property Name="Q4 Est Cartons Peak" Type="varchar" MaxLength="2048" />
+    <Property Name="Q4 Weekly Max Carton" Type="varchar" MaxLength="2048" />
+    <Property Name="Rest-of-Year Skid Max" Type="varchar" MaxLength="2048" />
+    <Property Name="Rest-of-Year Est. Cartons Off Peak" Type="varchar" MaxLength="2048" />
+    <Property Name="Off Peak Max Carton" Type="varchar" MaxLength="2048" />
+    <Property Name="Carrier" Type="varchar" MaxLength="2048" />
+    <Property Name="Transit Days" Type="varchar" MaxLength="2048" />
+    <Property Name="Ship Monday" Type="varchar" MaxLength="2048" />
+    <Property Name="Ship Tuesday" Type="varchar" MaxLength="2048" />
+    <Property Name="Ship Wednesday" Type="varchar" MaxLength="2048" />
+    <Property Name="Ship Thursday" Type="varchar" MaxLength="2048" />
+    <Property Name="Ship Friday" Type="varchar" MaxLength="2048" />
+    <Property Name="Skid Reduction" Type="varchar" MaxLength="2048" />
+    <Property Name="Online or Offline" Type="varchar" MaxLength="2048" />
+    <Property Name="Notes" Type="varchar" MaxLength="2048" />
+  </EntityType>
+  <EntityContainer Name="ImportModelStoreContainer">
+    <EntitySet Name="Log" EntityType="Self.Log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mmdestination" EntityType="Self.mmdestination" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mmraw" EntityType="Self.mmraw" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mmref" EntityType="Self.mmref" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ImportModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Timestamp" Type="datetime" />
+          <Property Name="Application" Type="varchar" MaxLength="64" />
+          <Property Name="Context" Type="varchar" MaxLength="64" />
+          <Property Name="StackTrace" Type="varchar" MaxLength="512" />
+          <Property Name="Ref1" Type="varchar" MaxLength="128" />
+          <Property Name="Ref2" Type="varchar" MaxLength="128" />
+          <Property Name="Ref3" Type="varchar" MaxLength="128" />
+          <Property Name="ExceptionMessage" Type="varchar" MaxLength="2048" />
+          <Property Name="Entry" Type="varchar" MaxLength="2048" />
+        </EntityType>
+        <EntityType Name="mmdestination">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Key" Type="varchar" MaxLength="2048" />
+          <Property Name="DName" Type="varchar" MaxLength="2048" />
+          <Property Name="DAdd1" Type="varchar" MaxLength="2048" />
+          <Property Name="DAdd2" Type="varchar" MaxLength="2048" />
+          <Property Name="DCity" Type="varchar" MaxLength="2048" />
+          <Property Name="DProv" Type="varchar" MaxLength="2048" />
+          <Property Name="DCty" Type="varchar" MaxLength="2048" />
+          <Property Name="DPostal" Type="varchar" MaxLength="2048" />
+          <Property Name="DContact" Type="varchar" MaxLength="2048" />
+          <Property Name="Pcs" Type="varchar" MaxLength="2048" />
+          <Property Name="Pwgt" Type="varchar" MaxLength="2048" />
+          <Property Name="Twgt" Type="varchar" MaxLength="2048" />
+          <Property Name="Tskid" Type="varchar" MaxLength="2048" />
+          <Property Name="UOM" Type="varchar" MaxLength="2048" />
+          <Property Name="Dim" Type="varchar" MaxLength="2048" />
+          <Property Name="Cube" Type="varchar" MaxLength="2048" />
+          <Property Name="Ref1" Type="varchar" MaxLength="2048" />
+          <Property Name="Ref2" Type="varchar" MaxLength="2048" />
+          <Property Name="Ref3" Type="varchar" MaxLength="2048" />
+          <Property Name="OName" Type="varchar" MaxLength="2048" />
+          <Property Name="OAdd1" Type="varchar" MaxLength="2048" />
+          <Property Name="OAdd2" Type="varchar" MaxLength="2048" />
+          <Property Name="OCity" Type="varchar" MaxLength="2048" />
+          <Property Name="OProv" Type="varchar" MaxLength="2048" />
+          <Property Name="OCty" Type="varchar" MaxLength="2048" />
+          <Property Name="OPostal" Type="varchar" MaxLength="2048" />
+          <Property Name="PuDate (yy/mm/dd)" Type="varchar" MaxLength="2048" />
+          <Property Name="DelDate (yy/mm/dd)" Type="varchar" MaxLength="2048" />
+          <Property Name="Hand_Notes" Type="varchar" MaxLength="2048" />
+          <Property Name="Special Instructions" Type="varchar" MaxLength="2048" />
+        </EntityType>
+        <EntityType Name="mmraw">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TRACKING NUMBER/ REF" Type="varchar" MaxLength="2048" />
+          <Property Name="SHIP/DATE" Type="varchar" MaxLength="2048" />
+          <Property Name="ACCOUNT NUMBER" Type="varchar" MaxLength="2048" />
+          <Property Name="CODE" Type="varchar" MaxLength="2048" />
+          <Property Name="SHIPPER NAME" Type="varchar" MaxLength="2048" />
+          <Property Name="SHIPPER ADDRESS" Type="varchar" MaxLength="2048" />
+          <Property Name="SPACER1" Type="varchar" MaxLength="2048" />
+          <Property Name="SHIPPER CITY" Type="varchar" MaxLength="2048" />
+          <Property Name="SHIPPER PROVINCE" Type="varchar" MaxLength="2048" />
+          <Property Name="SHIPPER POSTAL" Type="varchar" MaxLength="2048" />
+          <Property Name="CONSIGNEE NAME" Type="varchar" MaxLength="2048" />
+          <Property Name="KEY/CONSIGNEE NUMBER" Type="varchar" MaxLength="2048" />
+          <Property Name="CONSIGNEE" Type="varchar" MaxLength="2048" />
+          <Property Name="CONSIGNEE LOCATION" Type="varchar" MaxLength="2048" />
+          <Property Name="CONSIGNEE ADDRESS 1" Type="varchar" MaxLength="2048" />
+          <Property Name="CONSIGNEE ADDRESS 2" Type="varchar" MaxLength="2048" />
+          <Property Name="CONSIGNEE CITY" Type="varchar" MaxLength="2048" />
+          <Property Name="CONSIGNEE PROVINCE" Type="varchar" MaxLength="2048" />
+          <Property Name="CONSIGNEE POSTAL" Type="varchar" MaxLength="2048" />
+          <Property Name="SPACER2" Type="varchar" MaxLength="2048" />
+          <Property Name="SPACER3" Type="varchar" MaxLength="2048" />
+          <Property Name="SKID COUNT" Type="varchar" MaxLength="2048" />
+          <Property Name="WEIGHT" Type="varchar" MaxLength="2048" />
+          <Property Name="SERVICE" Type="varchar" MaxLength="2048" />
+          <Property Name="TRACKING NUMBER" Type="varchar" MaxLength="2048" />
+          <Property Name="DEL INSTRUCTIONS" Type="varchar" MaxLength="2048" />
+          <Property Name="ACC#" Type="varchar" MaxLength="2048" />
+          <Property Name="ACC#2" Type="varchar" MaxLength="2048" />
+          <Property Name="ACC#3" Type="varchar" MaxLength="2048" />
+        </EntityType>
+        <EntityType Name="mmref">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Store" Type="varchar" MaxLength="2048" />
+          <Property Name="Vendor" Type="varchar" MaxLength="2048" />
+          <Property Name="Store Name" Type="varchar" MaxLength="2048" />
+          <Property Name="Name" Type="varchar" MaxLength="2048" />
+          <Property Name="Address 1" Type="varchar" MaxLength="2048" />
+          <Property Name="Address 2" Type="varchar" MaxLength="2048" />
+          <Property Name="City" Type="varchar" MaxLength="2048" />
+          <Property Name="Prov" Type="varchar" MaxLength="2048" />
+          <Property Name="PC" Type="varchar" MaxLength="2048" />
+          <Property Name="All year Daily Deliveries" Type="varchar" MaxLength="2048" />
+          <Property Name="Start Window" Type="varchar" MaxLength="2048" />
+          <Property Name="End Window" Type="varchar" MaxLength="2048" />
+          <Property Name="Length of Window" Type="varchar" MaxLength="2048" />
+          <Property Name="Tailgate/Dock" Type="varchar" MaxLength="2048" />
+          <Property Name="Email" Type="varchar" MaxLength="2048" />
+          <Property Name="Attention" Type="varchar" MaxLength="2048" />
+          <Property Name="Phone#" Type="varchar" MaxLength="2048" />
+          <Property Name="Q4 Skid Max" Type="varchar" MaxLength="2048" />
+          <Property Name="Q4 Est Cartons Peak" Type="varchar" MaxLength="2048" />
+          <Property Name="Q4 Weekly Max Carton" Type="varchar" MaxLength="2048" />
+          <Property Name="Rest-of-Year Skid Max" Type="varchar" MaxLength="2048" />
+          <Property Name="Rest-of-Year Est. Cartons Off Peak" Type="varchar" MaxLength="2048" />
+          <Property Name="Off Peak Max Carton" Type="varchar" MaxLength="2048" />
+          <Property Name="Carrier" Type="varchar" MaxLength="2048" />
+          <Property Name="Transit Days" Type="varchar" MaxLength="2048" />
+          <Property Name="Ship Monday" Type="varchar" MaxLength="2048" />
+          <Property Name="Ship Tuesday" Type="varchar" MaxLength="2048" />
+          <Property Name="Ship Wednesday" Type="varchar" MaxLength="2048" />
+          <Property Name="Ship Thursday" Type="varchar" MaxLength="2048" />
+          <Property Name="Ship Friday" Type="varchar" MaxLength="2048" />
+          <Property Name="Skid Reduction" Type="varchar" MaxLength="2048" />
+          <Property Name="Online or Offline" Type="varchar" MaxLength="2048" />
+          <Property Name="Notes" Type="varchar" MaxLength="2048" />
+        </EntityType>
+        <EntityContainer Name="ImportModelStoreContainer">
+          <EntitySet Name="Log" EntityType="Self.Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mmdestination" EntityType="Self.mmdestination" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mmraw" EntityType="Self.mmraw" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mmref" EntityType="Self.mmref" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ImportModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="mmdestination">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Key" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="DName" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="DAdd1" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="DAdd2" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="DCity" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="DProv" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="DCty" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="DPostal" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="DContact" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Pcs" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Pwgt" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Twgt" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Tskid" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="UOM" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Dim" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Cube" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Ref1" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Ref2" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Ref3" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="OName" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="OAdd1" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="OAdd2" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="OCity" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="OProv" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="OCty" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="OPostal" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="PuDate__yy_mm_dd_" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="DelDate__yy_mm_dd_" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Hand_Notes" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Special_Instructions" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="mmraw">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TRACKING_NUMBER__REF" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="SHIP_DATE" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="ACCOUNT_NUMBER" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="CODE" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="SHIPPER_NAME" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="SHIPPER_ADDRESS" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="SPACER1" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="SHIPPER_CITY" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="SHIPPER_PROVINCE" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="SHIPPER_POSTAL" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="CONSIGNEE_NAME" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="KEY_CONSIGNEE_NUMBER" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="CONSIGNEE" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="CONSIGNEE_LOCATION" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="CONSIGNEE_ADDRESS_1" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="CONSIGNEE_ADDRESS_2" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="CONSIGNEE_CITY" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="CONSIGNEE_PROVINCE" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="CONSIGNEE_POSTAL" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="SPACER2" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="SPACER3" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="SKID_COUNT" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="WEIGHT" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="SERVICE" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="TRACKING_NUMBER" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="DEL_INSTRUCTIONS" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="ACC_" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="ACC_2" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="ACC_3" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="ImportEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="mmdestinations" EntityType="Self.mmdestination" />
+          <EntitySet Name="mmraws" EntityType="Self.mmraw" />
+          <EntitySet Name="mmrefs" EntityType="ImportModel.mmref" />
+          <EntitySet Name="Logs" EntityType="ImportModel.Log" />
+        </EntityContainer>
+        <EntityType Name="mmref">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Store" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Vendor" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Store_Name" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Address_1" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Address_2" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Prov" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="PC" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="All_year_Daily_Deliveries" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Start_Window" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="End_Window" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Length_of_Window" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Tailgate_Dock" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Attention" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Phone_" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Q4_Skid_Max" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Q4_Est_Cartons_Peak" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Q4_Weekly_Max_Carton" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Rest_of_Year_Skid_Max" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Rest_of_Year_Est__Cartons_Off_Peak" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Off_Peak_Max_Carton" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Carrier" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Transit_Days" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Ship_Monday" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Ship_Tuesday" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Ship_Wednesday" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Ship_Thursday" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Ship_Friday" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Skid_Reduction" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Online_or_Offline" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Notes" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Timestamp" Type="DateTime" Precision="3" />
+          <Property Name="Application" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="Context" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="StackTrace" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+          <Property Name="Ref1" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Ref2" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="Ref3" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="ExceptionMessage" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+          <Property Name="Entry" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ImportModelStoreContainer" CdmEntityContainer="ImportEntities">
+          <EntitySetMapping Name="mmdestinations">
+            <EntityTypeMapping TypeName="ImportModel.mmdestination">
+              <MappingFragment StoreEntitySet="mmdestination">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+                <ScalarProperty Name="DName" ColumnName="DName" />
+                <ScalarProperty Name="DAdd1" ColumnName="DAdd1" />
+                <ScalarProperty Name="DAdd2" ColumnName="DAdd2" />
+                <ScalarProperty Name="DCity" ColumnName="DCity" />
+                <ScalarProperty Name="DProv" ColumnName="DProv" />
+                <ScalarProperty Name="DCty" ColumnName="DCty" />
+                <ScalarProperty Name="DPostal" ColumnName="DPostal" />
+                <ScalarProperty Name="DContact" ColumnName="DContact" />
+                <ScalarProperty Name="Pcs" ColumnName="Pcs" />
+                <ScalarProperty Name="Pwgt" ColumnName="Pwgt" />
+                <ScalarProperty Name="Twgt" ColumnName="Twgt" />
+                <ScalarProperty Name="Tskid" ColumnName="Tskid" />
+                <ScalarProperty Name="UOM" ColumnName="UOM" />
+                <ScalarProperty Name="Dim" ColumnName="Dim" />
+                <ScalarProperty Name="Cube" ColumnName="Cube" />
+                <ScalarProperty Name="Ref1" ColumnName="Ref1" />
+                <ScalarProperty Name="Ref2" ColumnName="Ref2" />
+                <ScalarProperty Name="Ref3" ColumnName="Ref3" />
+                <ScalarProperty Name="OName" ColumnName="OName" />
+                <ScalarProperty Name="OAdd1" ColumnName="OAdd1" />
+                <ScalarProperty Name="OAdd2" ColumnName="OAdd2" />
+                <ScalarProperty Name="OCity" ColumnName="OCity" />
+                <ScalarProperty Name="OProv" ColumnName="OProv" />
+                <ScalarProperty Name="OCty" ColumnName="OCty" />
+                <ScalarProperty Name="OPostal" ColumnName="OPostal" />
+                <ScalarProperty Name="PuDate__yy_mm_dd_" ColumnName="PuDate (yy/mm/dd)" />
+                <ScalarProperty Name="DelDate__yy_mm_dd_" ColumnName="DelDate (yy/mm/dd)" />
+                <ScalarProperty Name="Hand_Notes" ColumnName="Hand_Notes" />
+                <ScalarProperty Name="Special_Instructions" ColumnName="Special Instructions" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mmraws">
+            <EntityTypeMapping TypeName="ImportModel.mmraw">
+              <MappingFragment StoreEntitySet="mmraw">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TRACKING_NUMBER__REF" ColumnName="TRACKING NUMBER/ REF" />
+                <ScalarProperty Name="SHIP_DATE" ColumnName="SHIP/DATE" />
+                <ScalarProperty Name="ACCOUNT_NUMBER" ColumnName="ACCOUNT NUMBER" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="SHIPPER_NAME" ColumnName="SHIPPER NAME" />
+                <ScalarProperty Name="SHIPPER_ADDRESS" ColumnName="SHIPPER ADDRESS" />
+                <ScalarProperty Name="SPACER1" ColumnName="SPACER1" />
+                <ScalarProperty Name="SHIPPER_CITY" ColumnName="SHIPPER CITY" />
+                <ScalarProperty Name="SHIPPER_PROVINCE" ColumnName="SHIPPER PROVINCE" />
+                <ScalarProperty Name="SHIPPER_POSTAL" ColumnName="SHIPPER POSTAL" />
+                <ScalarProperty Name="CONSIGNEE_NAME" ColumnName="CONSIGNEE NAME" />
+                <ScalarProperty Name="KEY_CONSIGNEE_NUMBER" ColumnName="KEY/CONSIGNEE NUMBER" />
+                <ScalarProperty Name="CONSIGNEE" ColumnName="CONSIGNEE" />
+                <ScalarProperty Name="CONSIGNEE_LOCATION" ColumnName="CONSIGNEE LOCATION" />
+                <ScalarProperty Name="CONSIGNEE_ADDRESS_1" ColumnName="CONSIGNEE ADDRESS 1" />
+                <ScalarProperty Name="CONSIGNEE_ADDRESS_2" ColumnName="CONSIGNEE ADDRESS 2" />
+                <ScalarProperty Name="CONSIGNEE_CITY" ColumnName="CONSIGNEE CITY" />
+                <ScalarProperty Name="CONSIGNEE_PROVINCE" ColumnName="CONSIGNEE PROVINCE" />
+                <ScalarProperty Name="CONSIGNEE_POSTAL" ColumnName="CONSIGNEE POSTAL" />
+                <ScalarProperty Name="SPACER2" ColumnName="SPACER2" />
+                <ScalarProperty Name="SPACER3" ColumnName="SPACER3" />
+                <ScalarProperty Name="SKID_COUNT" ColumnName="SKID COUNT" />
+                <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
+                <ScalarProperty Name="SERVICE" ColumnName="SERVICE" />
+                <ScalarProperty Name="TRACKING_NUMBER" ColumnName="TRACKING NUMBER" />
+                <ScalarProperty Name="DEL_INSTRUCTIONS" ColumnName="DEL INSTRUCTIONS" />
+                <ScalarProperty Name="ACC_" ColumnName="ACC#" />
+                <ScalarProperty Name="ACC_2" ColumnName="ACC#2" />
+                <ScalarProperty Name="ACC_3" ColumnName="ACC#3" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mmrefs">
+            <EntityTypeMapping TypeName="ImportModel.mmref">
+              <MappingFragment StoreEntitySet="mmref">
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Online_or_Offline" ColumnName="Online or Offline" />
+                <ScalarProperty Name="Skid_Reduction" ColumnName="Skid Reduction" />
+                <ScalarProperty Name="Ship_Friday" ColumnName="Ship Friday" />
+                <ScalarProperty Name="Ship_Thursday" ColumnName="Ship Thursday" />
+                <ScalarProperty Name="Ship_Wednesday" ColumnName="Ship Wednesday" />
+                <ScalarProperty Name="Ship_Tuesday" ColumnName="Ship Tuesday" />
+                <ScalarProperty Name="Ship_Monday" ColumnName="Ship Monday" />
+                <ScalarProperty Name="Transit_Days" ColumnName="Transit Days" />
+                <ScalarProperty Name="Carrier" ColumnName="Carrier" />
+                <ScalarProperty Name="Off_Peak_Max_Carton" ColumnName="Off Peak Max Carton" />
+                <ScalarProperty Name="Rest_of_Year_Est__Cartons_Off_Peak" ColumnName="Rest-of-Year Est. Cartons Off Peak" />
+                <ScalarProperty Name="Rest_of_Year_Skid_Max" ColumnName="Rest-of-Year Skid Max" />
+                <ScalarProperty Name="Q4_Weekly_Max_Carton" ColumnName="Q4 Weekly Max Carton" />
+                <ScalarProperty Name="Q4_Est_Cartons_Peak" ColumnName="Q4 Est Cartons Peak" />
+                <ScalarProperty Name="Q4_Skid_Max" ColumnName="Q4 Skid Max" />
+                <ScalarProperty Name="Phone_" ColumnName="Phone#" />
+                <ScalarProperty Name="Attention" ColumnName="Attention" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Tailgate_Dock" ColumnName="Tailgate/Dock" />
+                <ScalarProperty Name="Length_of_Window" ColumnName="Length of Window" />
+                <ScalarProperty Name="End_Window" ColumnName="End Window" />
+                <ScalarProperty Name="Start_Window" ColumnName="Start Window" />
+                <ScalarProperty Name="All_year_Daily_Deliveries" ColumnName="All year Daily Deliveries" />
+                <ScalarProperty Name="PC" ColumnName="PC" />
+                <ScalarProperty Name="Prov" ColumnName="Prov" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address_2" ColumnName="Address 2" />
+                <ScalarProperty Name="Address_1" ColumnName="Address 1" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Store_Name" ColumnName="Store Name" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="Store" ColumnName="Store" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logs">
+            <EntityTypeMapping TypeName="ImportModel.Log">
+              <MappingFragment StoreEntitySet="Log">
+                <ScalarProperty Name="Entry" ColumnName="Entry" />
+                <ScalarProperty Name="ExceptionMessage" ColumnName="ExceptionMessage" />
+                <ScalarProperty Name="Ref3" ColumnName="Ref3" />
+                <ScalarProperty Name="Ref2" ColumnName="Ref2" />
+                <ScalarProperty Name="Ref1" ColumnName="Ref1" />
+                <ScalarProperty Name="StackTrace" ColumnName="StackTrace" />
+                <ScalarProperty Name="Context" ColumnName="Context" />
+                <ScalarProperty Name="Application" ColumnName="Application" />
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ImportModelStoreContainer" CdmEntityContainer="ImportEntities">
+    <EntitySetMapping Name="mmdestinations">
+      <EntityTypeMapping TypeName="ImportModel.mmdestination">
+        <MappingFragment StoreEntitySet="mmdestination">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="DName" ColumnName="DName" />
+          <ScalarProperty Name="DAdd1" ColumnName="DAdd1" />
+          <ScalarProperty Name="DAdd2" ColumnName="DAdd2" />
+          <ScalarProperty Name="DCity" ColumnName="DCity" />
+          <ScalarProperty Name="DProv" ColumnName="DProv" />
+          <ScalarProperty Name="DCty" ColumnName="DCty" />
+          <ScalarProperty Name="DPostal" ColumnName="DPostal" />
+          <ScalarProperty Name="DContact" ColumnName="DContact" />
+          <ScalarProperty Name="Pcs" ColumnName="Pcs" />
+          <ScalarProperty Name="Pwgt" ColumnName="Pwgt" />
+          <ScalarProperty Name="Twgt" ColumnName="Twgt" />
+          <ScalarProperty Name="Tskid" ColumnName="Tskid" />
+          <ScalarProperty Name="UOM" ColumnName="UOM" />
+          <ScalarProperty Name="Dim" ColumnName="Dim" />
+          <ScalarProperty Name="Cube" ColumnName="Cube" />
+          <ScalarProperty Name="Ref1" ColumnName="Ref1" />
+          <ScalarProperty Name="Ref2" ColumnName="Ref2" />
+          <ScalarProperty Name="Ref3" ColumnName="Ref3" />
+          <ScalarProperty Name="OName" ColumnName="OName" />
+          <ScalarProperty Name="OAdd1" ColumnName="OAdd1" />
+          <ScalarProperty Name="OAdd2" ColumnName="OAdd2" />
+          <ScalarProperty Name="OCity" ColumnName="OCity" />
+          <ScalarProperty Name="OProv" ColumnName="OProv" />
+          <ScalarProperty Name="OCty" ColumnName="OCty" />
+          <ScalarProperty Name="OPostal" ColumnName="OPostal" />
+          <ScalarProperty Name="PuDate__yy_mm_dd_" ColumnName="PuDate (yy/mm/dd)" />
+          <ScalarProperty Name="DelDate__yy_mm_dd_" ColumnName="DelDate (yy/mm/dd)" />
+          <ScalarProperty Name="Hand_Notes" ColumnName="Hand_Notes" />
+          <ScalarProperty Name="Special_Instructions" ColumnName="Special Instructions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mmraws">
+      <EntityTypeMapping TypeName="ImportModel.mmraw">
+        <MappingFragment StoreEntitySet="mmraw">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TRACKING_NUMBER__REF" ColumnName="TRACKING NUMBER/ REF" />
+          <ScalarProperty Name="SHIP_DATE" ColumnName="SHIP/DATE" />
+          <ScalarProperty Name="ACCOUNT_NUMBER" ColumnName="ACCOUNT NUMBER" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="SHIPPER_NAME" ColumnName="SHIPPER NAME" />
+          <ScalarProperty Name="SHIPPER_ADDRESS" ColumnName="SHIPPER ADDRESS" />
+          <ScalarProperty Name="SPACER1" ColumnName="SPACER1" />
+          <ScalarProperty Name="SHIPPER_CITY" ColumnName="SHIPPER CITY" />
+          <ScalarProperty Name="SHIPPER_PROVINCE" ColumnName="SHIPPER PROVINCE" />
+          <ScalarProperty Name="SHIPPER_POSTAL" ColumnName="SHIPPER POSTAL" />
+          <ScalarProperty Name="CONSIGNEE_NAME" ColumnName="CONSIGNEE NAME" />
+          <ScalarProperty Name="KEY_CONSIGNEE_NUMBER" ColumnName="KEY/CONSIGNEE NUMBER" />
+          <ScalarProperty Name="CONSIGNEE" ColumnName="CONSIGNEE" />
+          <ScalarProperty Name="CONSIGNEE_LOCATION" ColumnName="CONSIGNEE LOCATION" />
+          <ScalarProperty Name="CONSIGNEE_ADDRESS_1" ColumnName="CONSIGNEE ADDRESS 1" />
+          <ScalarProperty Name="CONSIGNEE_ADDRESS_2" ColumnName="CONSIGNEE ADDRESS 2" />
+          <ScalarProperty Name="CONSIGNEE_CITY" ColumnName="CONSIGNEE CITY" />
+          <ScalarProperty Name="CONSIGNEE_PROVINCE" ColumnName="CONSIGNEE PROVINCE" />
+          <ScalarProperty Name="CONSIGNEE_POSTAL" ColumnName="CONSIGNEE POSTAL" />
+          <ScalarProperty Name="SPACER2" ColumnName="SPACER2" />
+          <ScalarProperty Name="SPACER3" ColumnName="SPACER3" />
+          <ScalarProperty Name="SKID_COUNT" ColumnName="SKID COUNT" />
+          <ScalarProperty Name="WEIGHT" ColumnName="WEIGHT" />
+          <ScalarProperty Name="SERVICE" ColumnName="SERVICE" />
+          <ScalarProperty Name="TRACKING_NUMBER" ColumnName="TRACKING NUMBER" />
+          <ScalarProperty Name="DEL_INSTRUCTIONS" ColumnName="DEL INSTRUCTIONS" />
+          <ScalarProperty Name="ACC_" ColumnName="ACC#" />
+          <ScalarProperty Name="ACC_2" ColumnName="ACC#2" />
+          <ScalarProperty Name="ACC_3" ColumnName="ACC#3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mmrefs">
+      <EntityTypeMapping TypeName="ImportModel.mmref">
+        <MappingFragment StoreEntitySet="mmref">
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Online_or_Offline" ColumnName="Online or Offline" />
+          <ScalarProperty Name="Skid_Reduction" ColumnName="Skid Reduction" />
+          <ScalarProperty Name="Ship_Friday" ColumnName="Ship Friday" />
+          <ScalarProperty Name="Ship_Thursday" ColumnName="Ship Thursday" />
+          <ScalarProperty Name="Ship_Wednesday" ColumnName="Ship Wednesday" />
+          <ScalarProperty Name="Ship_Tuesday" ColumnName="Ship Tuesday" />
+          <ScalarProperty Name="Ship_Monday" ColumnName="Ship Monday" />
+          <ScalarProperty Name="Transit_Days" ColumnName="Transit Days" />
+          <ScalarProperty Name="Carrier" ColumnName="Carrier" />
+          <ScalarProperty Name="Off_Peak_Max_Carton" ColumnName="Off Peak Max Carton" />
+          <ScalarProperty Name="Rest_of_Year_Est__Cartons_Off_Peak" ColumnName="Rest-of-Year Est. Cartons Off Peak" />
+          <ScalarProperty Name="Rest_of_Year_Skid_Max" ColumnName="Rest-of-Year Skid Max" />
+          <ScalarProperty Name="Q4_Weekly_Max_Carton" ColumnName="Q4 Weekly Max Carton" />
+          <ScalarProperty Name="Q4_Est_Cartons_Peak" ColumnName="Q4 Est Cartons Peak" />
+          <ScalarProperty Name="Q4_Skid_Max" ColumnName="Q4 Skid Max" />
+          <ScalarProperty Name="Phone_" ColumnName="Phone#" />
+          <ScalarProperty Name="Attention" ColumnName="Attention" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Tailgate_Dock" ColumnName="Tailgate/Dock" />
+          <ScalarProperty Name="Length_of_Window" ColumnName="Length of Window" />
+          <ScalarProperty Name="End_Window" ColumnName="End Window" />
+          <ScalarProperty Name="Start_Window" ColumnName="Start Window" />
+          <ScalarProperty Name="All_year_Daily_Deliveries" ColumnName="All year Daily Deliveries" />
+          <ScalarProperty Name="PC" ColumnName="PC" />
+          <ScalarProperty Name="Prov" ColumnName="Prov" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address_2" ColumnName="Address 2" />
+          <ScalarProperty Name="Address_1" ColumnName="Address 1" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Store_Name" ColumnName="Store Name" />
+          <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+          <ScalarProperty Name="Store" ColumnName="Store" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logs">
+      <EntityTypeMapping TypeName="ImportModel.Log">
+        <MappingFragment StoreEntitySet="Log">
+          <ScalarProperty Name="Entry" ColumnName="Entry" />
+          <ScalarProperty Name="ExceptionMessage" ColumnName="ExceptionMessage" />
+          <ScalarProperty Name="Ref3" ColumnName="Ref3" />
+          <ScalarProperty Name="Ref2" ColumnName="Ref2" />
+          <ScalarProperty Name="Ref1" ColumnName="Ref1" />
+          <ScalarProperty Name="StackTrace" ColumnName="StackTrace" />
+          <ScalarProperty Name="Context" ColumnName="Context" />
+          <ScalarProperty Name="Application" ColumnName="Application" />
+          <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
