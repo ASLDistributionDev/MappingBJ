@@ -244,17 +244,20 @@ namespace MappingBJ
 
         private void SpitOutFile()
         {
-            CsvHelper.Configuration.CsvConfiguration config = new CsvHelper.Configuration.CsvConfiguration(CultureInfo.CurrentCulture);
-            config.Delimiter = ",";
-            config.Quote = '"';
-            config.HasHeaderRecord = true;
-
-            //Have to get rid of the ID field here.
-            using (TextWriter writer = new StreamWriter(@"\\dc1\Data\Public\EDI\EDINew\Mastermind\3PL_FLXdata\output_" + DateTime.Now.Ticks.ToString() + ".csv"))
+            if (destinations.Count != 0)
             {
-                var csv = new CsvWriter(writer, config);
-                
-                csv.WriteRecords(destinations); // where values implements IEnumerable
+                CsvHelper.Configuration.CsvConfiguration config = new CsvHelper.Configuration.CsvConfiguration(CultureInfo.CurrentCulture);
+                config.Delimiter = ",";
+                config.Quote = '"';
+                config.HasHeaderRecord = true;
+
+                //Have to get rid of the ID field here.
+                using (TextWriter writer = new StreamWriter(@"\\dc1\Data\Public\EDI\EDINew\Mastermind\3PL_FLXdata\output_" + DateTime.Now.Ticks.ToString() + ".csv"))
+                {
+                    var csv = new CsvWriter(writer, config);
+
+                    csv.WriteRecords(destinations); // where values implements IEnumerable
+                }
             }
         }
 
