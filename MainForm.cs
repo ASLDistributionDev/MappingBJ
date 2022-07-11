@@ -129,7 +129,7 @@ namespace MappingBJ
             CsvHelper.Configuration.CsvConfiguration config = new CsvHelper.Configuration.CsvConfiguration(CultureInfo.CurrentCulture);
             config.Delimiter = ",";
             config.Quote = '"';
-            config.HasHeaderRecord = true;
+            config.HasHeaderRecord = false;
             TextReader reader = File.OpenText(filename);
             var csv = new CsvReader(reader, config);
 
@@ -206,40 +206,60 @@ namespace MappingBJ
 
             var raws = ie.mmraws.ToList();
 
-            List<mmdestinationOutput> mmdests = new List<mmdestinationOutput>();
+            Dictionary<string, mmdestinationOutput> storeDests = new Dictionary<string, mmdestinationOutput>();
 
             foreach (var raw in raws)
             {
-                mmdestinationOutput mmd = new mmdestinationOutput();
-                mmd.Key = raw.TRACKING_NUMBER__REF;
-                mmd.DName = raw.SHIPPER_NAME;
-                mmd.DAdd1 = raw.CONSIGNEE_ADDRESS_1;
-                mmd.DAdd2 = raw.CONSIGNEE_ADDRESS_2;
-                mmd.DCity = raw.CONSIGNEE_CITY;
-                mmd.DProv = raw.CONSIGNEE_PROVINCE;
-                mmd.DCty = "CA";
-                mmd.DPostal = raw.CONSIGNEE_POSTAL;
-                mmd.DContact = raw.CONSIGNEE;
-                mmd.Pcs = "0";
-                mmd.Pwgt = "0";
-                mmd.Twgt = raw.WEIGHT;
-                mmd.Tskid = raw.SKID_COUNT;
-                mmd.OName = raw.SHIPPER_NAME;
-                mmd.OAdd1 = raw.SHIPPER_ADDRESS;
-                mmd.OCity = raw.SHIPPER_CITY;
-                mmd.OProv = raw.SHIPPER_PROVINCE;
-                mmd.OCty = "CA";
-                mmd.OPostal = raw.SHIPPER_POSTAL;
-                mmd.PuDate__yy_mm_dd_ = GetPUDate(raw.SHIP_DATE);
-                mmd.DelDate__yy_mm_dd_ = "";
-                mmd.Special_Instructions = GetSpecialInstructions(raw.KEY_CONSIGNEE_NUMBER);
-                
-                mmdests.Add(mmd);
+                string storeNumber = raw.KEY_CONSIGNEE_NUMBER;
+                if (storeDests.ContainsKey(storeNumber))
+                {
+                    var dest = storeDests[storeNumber];
+                    try
+                    {
+                        dest.Tskid = ((int)(Convert.ToDouble(dest.Tskid) + Convert.ToDouble(raw.SKID_COUNT))).ToString();
+                        dest.Twgt = ((float)(Convert.ToDouble(dest.Twgt) + Convert.ToDouble(raw.WEIGHT))).ToString();
+
+                        dest.Hand_Notes += raw.TRACKING_NUMBER__REF;
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                    continue;
+                }
+                else
+                {
+                    mmdestinationOutput mmd = new mmdestinationOutput();
+                    mmd.Key = raw.TRACKING_NUMBER__REF;
+                    mmd.DName = raw.SHIPPER_NAME;
+                    mmd.DAdd1 = raw.CONSIGNEE_ADDRESS_1;
+                    mmd.DAdd2 = raw.CONSIGNEE_ADDRESS_2;
+                    mmd.DCity = raw.CONSIGNEE_CITY;
+                    mmd.DProv = raw.CONSIGNEE_PROVINCE;
+                    mmd.DCty = "CA";
+                    mmd.DPostal = raw.CONSIGNEE_POSTAL;
+                    mmd.DContact = raw.CONSIGNEE;
+                    mmd.Pcs = "0";
+                    mmd.Pwgt = "0";
+                    mmd.Twgt = raw.WEIGHT;
+                    mmd.Tskid = raw.SKID_COUNT;
+                    mmd.OName = raw.SHIPPER_NAME;
+                    mmd.OAdd1 = raw.SHIPPER_ADDRESS;
+                    mmd.OCity = raw.SHIPPER_CITY;
+                    mmd.OProv = raw.SHIPPER_PROVINCE;
+                    mmd.OCty = "CA";
+                    mmd.OPostal = raw.SHIPPER_POSTAL;
+                    mmd.PuDate__yy_mm_dd_ = GetPUDate(raw.SHIP_DATE);
+                    mmd.DelDate__yy_mm_dd_ = "";
+                    mmd.Special_Instructions = GetSpecialInstructions(raw.KEY_CONSIGNEE_NUMBER);
+
+                    storeDests.Add(storeNumber, mmd);
+                }
             }
 
             DB.Execute("truncate table mmraw");
 
-            destinations = mmdests;
+            destinations = storeDests.Values.ToList();
         }
 
         private void SpitOutFile()
