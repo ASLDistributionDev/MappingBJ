@@ -214,6 +214,15 @@ namespace MappingBJ
 
         private string GetSpecialInstructions(string storeNumber)
         {
+            try
+            {
+                storeNumber = Convert.ToInt16(storeNumber).ToString();
+            }
+            catch (Exception ex)
+            {
+
+            }
+            
             var store = stores.FirstOrDefault(m => m.Store == storeNumber);
 
             string specialInstructions = "";
@@ -286,7 +295,10 @@ namespace MappingBJ
 
             DB.Execute("truncate table mmraw");
 
-            destinations = storeDests.Values.ToList();
+            destinations = storeDests.Values
+                                        .Where( m => !string.IsNullOrEmpty(m.DAdd1) 
+                                                && !string.IsNullOrWhiteSpace(m.DAdd1))
+                                        .ToList();
         }
 
         private void SpitOutFile()
