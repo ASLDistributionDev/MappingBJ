@@ -8,7 +8,7 @@
     <Property Name="Timestamp" Type="datetime" />
     <Property Name="Application" Type="varchar" MaxLength="64" />
     <Property Name="Context" Type="varchar" MaxLength="64" />
-    <Property Name="StackTrace" Type="varchar" MaxLength="512" />
+    <Property Name="StackTrace" Type="varchar" MaxLength="4096" />
     <Property Name="Ref1" Type="varchar" MaxLength="128" />
     <Property Name="Ref2" Type="varchar" MaxLength="128" />
     <Property Name="Ref3" Type="varchar" MaxLength="128" />

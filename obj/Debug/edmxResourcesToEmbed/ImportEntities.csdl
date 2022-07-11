@@ -124,7 +124,7 @@
     <Property Name="Timestamp" Type="DateTime" Precision="3" />
     <Property Name="Application" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
     <Property Name="Context" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
-    <Property Name="StackTrace" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="StackTrace" Type="String" MaxLength="4096" FixedLength="false" Unicode="false" />
     <Property Name="Ref1" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
     <Property Name="Ref2" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
     <Property Name="Ref3" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />

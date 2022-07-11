@@ -114,7 +114,7 @@ namespace MappingBJ
 
         private void SuckInFiles()
         {
-            var files = Directory.GetFiles(@"\\dc1\Data\Public\EDI\EDINew\Mastermind\Inbound_3PL");
+            var files = Directory.GetFiles(@"\\dc1\Data\Public\EDI\EDINew\Mastermind\Inbound_3PL", "*.csv");
             foreach (var file in files)
             {
                 SuckInFile(file);
@@ -130,6 +130,7 @@ namespace MappingBJ
             config.Delimiter = ",";
             config.Quote = '"';
             config.HasHeaderRecord = false;
+            config.BadDataFound = null;
             TextReader reader = File.OpenText(filename);
             var csv = new CsvReader(reader, config);
 
@@ -154,8 +155,13 @@ namespace MappingBJ
             foreach (var row in result)
             {
                 string vals = "";
-                foreach (var v in row)
+                for (int i = 0; i < 29; i++)
                 {
+                    string v = "";
+                    if (i < row.Count)
+                    {
+                        v = row[i];
+                    }
                     vals += "'" + v.Replace("'", "''") + "', ";
                 }
                 if (vals.Length > 0)
@@ -183,10 +189,25 @@ namespace MappingBJ
 
         private string GetPUDate(string shipdate)
         {
-            var dateComponents = shipdate.Split('/');
-            var year = dateComponents[2].Substring(2, 2);
-            var month = dateComponents[0];
-            var day = dateComponents[1];
+            string year = "", month = "", day = "";
+
+            if (shipdate.Length >= 8)
+            {
+                if (shipdate.Contains("/"))
+                {
+                    var dateComponents = shipdate.Split('/');
+                    year = dateComponents[2].Substring(2, 2);
+                    month = dateComponents[0];
+                    day = dateComponents[1];
+                }
+                else
+                {
+                    var dateComponents = shipdate.Split('-');
+                    year = dateComponents[0];
+                    month = dateComponents[1];
+                    day = dateComponents[2];
+                }
+            }
 
             return year + month + day;
         }
@@ -195,7 +216,12 @@ namespace MappingBJ
         {
             var store = stores.FirstOrDefault(m => m.Store == storeNumber);
 
-            return store.All_year_Daily_Deliveries + " " + store.Start_Window + " " + store.End_Window + " " + store.Length_of_Window + " " + store.Tailgate_Dock + " " + store.Attention + " " + store.Phone_;
+            string specialInstructions = "";
+            if (store != null)
+            {
+                specialInstructions = store.All_year_Daily_Deliveries + " " + store.Start_Window + " " + store.End_Window + " " + store.Length_of_Window + " " + store.Tailgate_Dock + " " + store.Attention + " " + store.Phone_;
+            }
+            return specialInstructions;
         }
 
         private void MapData()
@@ -219,7 +245,7 @@ namespace MappingBJ
                         dest.Tskid = ((int)(Convert.ToDouble(dest.Tskid) + Convert.ToDouble(raw.SKID_COUNT))).ToString();
                         dest.Twgt = ((float)(Convert.ToDouble(dest.Twgt) + Convert.ToDouble(raw.WEIGHT))).ToString();
 
-                        dest.Hand_Notes += raw.TRACKING_NUMBER__REF;
+                        dest.Hand_Notes += ", " + raw.TRACKING_NUMBER__REF;
                     }
                     catch (Exception ex)
                     {
@@ -252,6 +278,7 @@ namespace MappingBJ
                     mmd.PuDate__yy_mm_dd_ = GetPUDate(raw.SHIP_DATE);
                     mmd.DelDate__yy_mm_dd_ = "";
                     mmd.Special_Instructions = GetSpecialInstructions(raw.KEY_CONSIGNEE_NUMBER);
+                    mmd.Hand_Notes = raw.TRACKING_NUMBER__REF;
 
                     storeDests.Add(storeNumber, mmd);
                 }

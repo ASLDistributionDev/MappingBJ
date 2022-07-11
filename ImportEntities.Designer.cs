@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\theco\Dropbox\Consulting\Clients\ASL\Projects\BackgroundMappingJob\VS Projects\MappingBJ\ImportEntities.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\theco\source\repos\ASLDistributionDev\MappingBJ\ImportEntities.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
