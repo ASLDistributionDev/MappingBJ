@@ -311,12 +311,32 @@ namespace MappingBJ
                 config.HasHeaderRecord = true;
 
                 //Have to get rid of the ID field here.
-                using (TextWriter writer = new StreamWriter(@"\\dc1\Data\Public\EDI\EDINew\Mastermind\3PL_FLXdata\output_" + DateTime.Now.Ticks.ToString() + ".csv"))
+
+                string file = @"\\dc1\Data\Public\EDI\EDINew\Mastermind\3PL_FLXdata\output_" + DateTime.Now.Ticks.ToString() + ".csv";
+                using (TextWriter writer = new StreamWriter(file))
                 {
                     var csv = new CsvWriter(writer, config);
 
                     csv.WriteRecords(destinations); // where values implements IEnumerable
                 }
+
+                StreamReader reader = new StreamReader(file);
+
+                var text = reader.ReadToEnd();
+
+                text = text.Replace("\r\n", "~|~|");
+                text = text.Replace("\n", "");
+                text = text.Replace("~|~|", "\r\n");
+
+                reader.Close();
+                reader.Dispose();
+
+                StreamWriter sw = new StreamWriter(file);
+
+                sw.Write(text);
+
+                sw.Close();
+                sw.Dispose();
             }
         }
 
