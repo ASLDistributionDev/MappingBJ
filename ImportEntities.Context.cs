@@ -29,5 +29,6 @@ namespace MappingBJ
         public virtual DbSet<mmraw> mmraws { get; set; }
         public virtual DbSet<mmref> mmrefs { get; set; }
         public virtual DbSet<Log> Logs { get; set; }
+        public virtual DbSet<ProvTerrAbbreviation> ProvTerrAbbreviations { get; set; }
     }
 }

@@ -125,10 +125,18 @@
     <Property Name="Online or Offline" Type="varchar" MaxLength="2048" />
     <Property Name="Notes" Type="varchar" MaxLength="2048" />
   </EntityType>
+  <EntityType Name="ProvTerrAbbreviations">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="Abbreviation" Type="nvarchar" MaxLength="2" Nullable="false" />
+  </EntityType>
   <EntityContainer Name="ImportModelStoreContainer">
     <EntitySet Name="Log" EntityType="Self.Log" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mmdestination" EntityType="Self.mmdestination" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mmraw" EntityType="Self.mmraw" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mmref" EntityType="Self.mmref" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProvTerrAbbreviations" EntityType="Self.ProvTerrAbbreviations" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

@@ -130,5 +130,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ProvTerrAbbreviations">
+      <EntityTypeMapping TypeName="ImportModel.ProvTerrAbbreviation">
+        <MappingFragment StoreEntitySet="ProvTerrAbbreviations">
+          <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

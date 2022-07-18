@@ -9,6 +9,7 @@
         <EntityTypeShape EntityType="ImportModel.mmraw" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ImportModel.mmref" Width="1.5" PointX="5.375" PointY="0.75" />
         <EntityTypeShape EntityType="ImportModel.Log" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ImportModel.ProvTerrAbbreviation" Width="1.5" PointX="7.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

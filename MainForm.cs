@@ -17,6 +17,8 @@ namespace MappingBJ
     {
         List<mmref> stores = new List<mmref>();
         List<mmdestinationOutput> destinations = new List<mmdestinationOutput>();
+        Dictionary<string, string> provTerrAbbreviations = new Dictionary<string, string>();
+
         public MainForm()
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace MappingBJ
             try
             {
                 GetRefs();
+                GetProvTerrAbbreviations();
                 SuckInFiles();
                 MapData();
                 SpitOutFile();
@@ -35,6 +38,14 @@ namespace MappingBJ
                 Environment.Exit(1);
             }
             Environment.Exit(0);
+        }
+
+        private void GetProvTerrAbbreviations()
+        {
+            ImportEntities ie = new ImportEntities();
+
+            provTerrAbbreviations = ie.ProvTerrAbbreviations
+                                        .ToDictionary(m => m.Name, m => m.Abbreviation);
         }
 
         private void GetRefs()
@@ -270,7 +281,7 @@ namespace MappingBJ
                     mmd.DAdd1 = raw.CONSIGNEE_ADDRESS_1;
                     mmd.DAdd2 = raw.CONSIGNEE_ADDRESS_2;
                     mmd.DCity = raw.CONSIGNEE_CITY;
-                    mmd.DProv = raw.CONSIGNEE_PROVINCE;
+                    mmd.DProv = GetProvTerrAbbreviation(raw.CONSIGNEE_PROVINCE);
                     mmd.DCty = "CA";
                     mmd.DPostal = raw.CONSIGNEE_POSTAL;
                     mmd.DContact = raw.CONSIGNEE;
@@ -299,6 +310,19 @@ namespace MappingBJ
                                         .Where( m => !string.IsNullOrEmpty(m.DAdd1) 
                                                 && !string.IsNullOrWhiteSpace(m.DAdd1))
                                         .ToList();
+        }
+
+        private string GetProvTerrAbbreviation(string provTerr)
+        {
+            string abbreviation = provTerr;
+
+            string name = provTerr.ToLower().Trim();
+            if (provTerrAbbreviations.ContainsKey(name))
+            {
+                abbreviation = provTerrAbbreviations[name];
+            }
+
+            return abbreviation;
         }
 
         private void SpitOutFile()

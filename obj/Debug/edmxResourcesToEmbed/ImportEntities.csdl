@@ -76,6 +76,7 @@
     <EntitySet Name="mmraws" EntityType="Self.mmraw" />
     <EntitySet Name="mmrefs" EntityType="ImportModel.mmref" />
     <EntitySet Name="Logs" EntityType="ImportModel.Log" />
+    <EntitySet Name="ProvTerrAbbreviations" EntityType="ImportModel.ProvTerrAbbreviation" />
   </EntityContainer>
   <EntityType Name="mmref">
     <Key>
@@ -130,5 +131,12 @@
     <Property Name="Ref3" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
     <Property Name="ExceptionMessage" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
     <Property Name="Entry" Type="String" MaxLength="2048" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ProvTerrAbbreviation">
+    <Key>
+      <PropertyRef Name="Name" />
+    </Key>
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Abbreviation" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>
