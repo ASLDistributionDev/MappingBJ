@@ -239,7 +239,7 @@ namespace MappingBJ
             string specialInstructions = "";
             if (store != null)
             {
-                specialInstructions = store.All_year_Daily_Deliveries + " " + store.Start_Window + " " + store.End_Window + " " + store.Length_of_Window + " " + store.Tailgate_Dock + " " + store.Attention + " " + store.Phone_;
+                specialInstructions = store.All_year_Daily_Deliveries + " " + store.Start_Window + " " + store.End_Window + " " + store.Tailgate_Dock + " " + store.Attention + " " + store.Phone_;
             }
             return specialInstructions;
         }
